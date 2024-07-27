@@ -64,9 +64,6 @@ public:
     void algoDFS();
 
 
-    void printVisited(const std::set<char>& visited);
-
-
     void validateNonEmpty(char node) const;
 
 
