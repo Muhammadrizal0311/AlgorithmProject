@@ -49,10 +49,18 @@ public:
      */
     void algoBFS();
 
-    // Implementasi algoritma Dijkstra
+    /**
+     * Dibawah ini adalah sebuah fungsi untuk pencarian rute dengan Algoritma Djikstra
+     * @author      Nama    : Aditya Saputra
+     * @details     NIM     : 411231139
+     */
     void algoDijkstra();
 
-    // Implementasi algoritma DFS
+    /**
+     * Dibawah ini adalah sebuah fungsi untuk pencarian rute dengan Algoritma Djikstra
+     * @author      Nama    : Neny Rahmawati
+     * @details     NIM     : 411231098
+     */
     void algoDFS();
 
 
