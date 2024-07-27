@@ -68,7 +68,7 @@ int main() {
 
     auto t1 = high_resolution_clock::now(); //Awal perhitungan algortima pencarian rute
 
-    std::cout << "BFS traversal starting from vertex " << myGraf.getStartNode() << ": ";
+    std::cout << "BFS visited starting from vertex " << myGraf.getStartNode() << ": ";
     myGraf.algoBFS();
     std::cout << std::endl;
 

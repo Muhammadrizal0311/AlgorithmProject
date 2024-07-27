@@ -68,7 +68,7 @@ int main() {
 
     auto t1 = high_resolution_clock::now(); //Awal perhitungan algortima pencarian rute
 
-    std::cout << "Djikstra traversal starting from vertex " << myGraf.getStartNode() << ": ";
+    std::cout << "DFS visited starting from vertex " << myGraf.getStartNode() << ": ";
     myGraf.algoDFS();
     std::cout << std::endl;
 

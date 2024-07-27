@@ -68,7 +68,7 @@ int main() {
 
     auto t1 = high_resolution_clock::now(); //Awal perhitungan algortima pencarian rute
 
-    std::cout << "Djikstra traversal starting from vertex " << myGraf.getStartNode() << ": ";
+    std::cout << "Djikstra visited starting from vertex " << myGraf.getStartNode() << ": ";
     myGraf.algoDijkstra();
     std::cout << std::endl;
 
