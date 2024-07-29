@@ -8,83 +8,100 @@
 #include <set>
 #include <functional>
 
-
 /**
- * @struct Deklarasi tipedata dan bentuk object Edges
+ * @struct Edge
+ * @brief Mewakili sebuah sisi dalam graf dengan simpul awal, simpul akhir, dan total jarak rute.
  */
 struct Edge {
-    char currentVertex;
-    char nextVertex;
-    int totalRute;
+    char currentVertex;  ///< Simpul awal dari sisi
+    char nextVertex;     ///< Simpul akhir dari sisi
+    int totalRute;       ///< Jarak rute dalam kilometer
 };
 
 /**
- * @class Melakukan deklarasi sebuah object atau blue print, dan kita juga bisa melaukan deklarasi variable lainnya
+ * @class Graf
+ * @brief Mewakili sebuah graf dengan metode untuk menambahkan sisi, mencetak graf, dan mencari rute menggunakan berbagai algoritma.
  */
 class Graf {
 private:
-    char startNode, endNode;
-    std::unordered_map<char, std::vector<Edge>> adjList;
-
+    char startNode;  ///< Simpul awal dari graf
+    char endNode;    ///< Simpul akhir dari graf
+    std::unordered_map<char, std::vector<Edge>> adjList;  ///< Daftar ketetanggaan yang mewakili graf
 
 public:
     /**
-     * Menambahkan Edges atau Simpul pada sebuah Graf yang ada
-     * @param currVertex    : Berfungsi untuk menyimpan titik Vertex awal
-     * @param nextVertex    : Berfungsi untuk menyimpan titik Vertex selanjut nya
-     * @param totalRute     : Berfungsi untuk menyimpan total Rute dalam satuan Km dengan Google Maps
-     * @return void
+     * @brief Menambahkan sebuah sisi ke dalam graf.
+     * @param currVertex Simpul awal dari sisi
+     * @param nextVertex Simpul akhir dari sisi
+     * @param totalRute Jarak rute dalam kilometer
      */
     void addEdge(char currVertex, char nextVertex, int totalRute);
 
     /**
-     * Melakukan pencetakan semua simpul / Edges yang telah di tambahkan 
+     * @brief Mencetak semua sisi dalam graf.
      */
     void printGraf();
 
     /**
-     * Dibawah ini adalah sebuah fungsi untuk pencarian rute dengan Algoritma BFS
-     * @author      Nama    : Muhammad Rizal
-     * @details     NIM     : 411231097
+     * @brief Mencari rute menggunakan algoritma Breadth-First Search (BFS).
+     * @author
+     *  Nama    : Muhammad Rizal
+     *  NIM     : 411231097
      */
     void algoBFS();
 
     /**
-     * Dibawah ini adalah sebuah fungsi untuk pencarian rute dengan Algoritma Djikstra
-     * @author      Nama    : Aditya Saputra
-     * @details     NIM     : 411231139
+     * @brief Mencari rute menggunakan algoritma Dijkstra untuk jalur terpendek.
+     * @author
+     *  Nama    : Aditya Saputra
+     *  NIM     : 411231139
      */
     void algoDijkstra();
 
     /**
-     * Dibawah ini adalah sebuah fungsi untuk pencarian rute dengan Algoritma Djikstra
-     * @author      Nama    : Neny Rahmawati
-     * @details     NIM     : 411231098
+     * @brief Mencari rute menggunakan algoritma Depth-First Search (DFS).
+     * @author
+     *  Nama    : Neny Rahmawati
+     *  NIM     : 411231098
      */
     void algoDFS();
 
-
+    /**
+     * @brief Memvalidasi bahwa simpul yang ditentukan tidak kosong.
+     * @param node Simpul yang akan divalidasi
+     * @throw std::invalid_argument jika simpul kosong
+     */
     void validateNonEmpty(char node) const;
 
-
+    /**
+     * @brief Mencetak koneksi (sisi) dari daftar sisi yang diberikan.
+     * @param edges Daftar sisi yang akan dicetak
+     */
     void printConnections(const std::vector<Edge>& edges) const;
 
     /**
-     * Setter untuk startNode sebagai titik awal dari perjalanan
-     * @param node      : Node dengan tipe Character
+     * @brief Mengatur simpul awal untuk perjalanan.
+     * @param node Simpul awal
      */
     void setStartNode(char node);
     
     /**
-     * Setter untuk endENode sebagai titik akhir dari perjalanan
-     * @param node      : Node dengan tipe Character
+     * @brief Mengatur simpul akhir untuk perjalanan.
+     * @param node Simpul akhir
      */
     void setEndNode(char node);
     
-    // Getter untuk startNode
+    /**
+     * @brief Mendapatkan simpul awal dari graf.
+     * @return Simpul awal
+     */
     char getStartNode() const;
     
-    // Getter untuk endNode
+    /**
+     * @brief Mendapatkan simpul akhir dari graf.
+     * @return Simpul akhir
+     */
     char getEndNode() const;
 };
+
 #endif
